@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
 import { Todo } from "./item";
+import './style.css'
 
 const SingleTodo: React.FC<{
   todo: Todo;
@@ -38,18 +39,18 @@ const SingleTodo: React.FC<{
   };
 
   return (
-    <form className="todos__single" onSubmit={(e) => handleEdit(e, todo.id)}>
+    <form className="todo_single" onSubmit={(e) => handleEdit(e, todo.id)}>
       {edit ? (
         <input
           value={editTodo}
           onChange={(e) => setEditTodo(e.target.value)}
-          className="todos__single--text"
+          className="todo_single_text"
           ref={inputRef}
         />
       ) : todo.isDone ? (
-        <s className="todos__single--text">{todo.todo}</s>
+        <s className="todo_single_text">{todo.todo}</s>
       ) : (
-        <span className="todos__single--text">{todo.todo}</span>
+        <span className="todo_single_text">{todo.todo}</span>
       )}
       <div>
         <span

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Todo } from './item'
 import SingleTodo from './SingleTodo'
+import './style.css'
 
 interface Props {
     todos: Todo[],

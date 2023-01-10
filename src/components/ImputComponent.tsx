@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import './style.css'
 
 interface Props {
     todo: string;
@@ -14,7 +15,7 @@ const ImputComponent:React.FC<Props> = ({todo, setTodo, handleAdd}) => {
   }}
   >
     <input className='input_field' type='text' value={todo} ref={inputRef} onChange={(e)=>setTodo(e.target.value)}placeholder='Enter new task'></input>
-    <button className='input_submt' type='submit'>Add</button>
+    <button className='input_submit' type='submit'>Add</button>
   </form>
   )
 }
