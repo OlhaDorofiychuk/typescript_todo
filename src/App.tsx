@@ -7,10 +7,14 @@ import TodoList from './components/TodoList';
 const App: React.FC=()=>{
   const [todo, setTodo] = useState<string>('');
   const [todos, seTodos] = useState<Todo[]>([]);
+
+  function getUID (){
+    return Date.now()
+  }
   const handleAdd =(e:React.FormEvent)=>{
     e.preventDefault()
     if(todo) {
-      seTodos([...todos,{id: Date.now(), todo, isDone: false}])
+      seTodos([...todos,{id: getUID(), todo, isDone: false}])
       setTodo('')
     }
   }
@@ -20,10 +24,8 @@ const App: React.FC=()=>{
     <div className="App">
       <span className='heading'>My ToDo</span>
       <ImputComponent todo={todo} setTodo={setTodo} handleAdd={handleAdd}/>
-      <TodoList />
-      {todos.map(task=>(
-        <li key={task.id}>{task.todo}</li>
-      ))}
+      <TodoList todos={todos} setTodos={seTodos}/>
+  
     </div>
   );
 }
