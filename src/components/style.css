@@ -1,3 +1,7 @@
+.container {
+  display: grid;
+  
+}
 .input {
     display: flex;
     width: 90%;
@@ -77,6 +81,10 @@
     font-size: 25px;
     cursor: pointer;
   }
+
+.list_todos_heading {
+font-size: 40px;
+}
   
   @media (max-width: 1200px) {
     .todo_single {
