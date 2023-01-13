@@ -67,7 +67,16 @@
   .completed {
     background-color: #10dc43aa;
   }
-  
+  .dragactive {
+    background-color: #149aed;
+  }
+  .dragcompleted {
+    background-color: #10dc43c9;
+  }
+  .drag {
+    box-shadow:  0 0 15px black;
+
+  }
   .todo_single {
     display: flex;
     border-radius: 5px;
